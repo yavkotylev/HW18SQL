@@ -53,13 +53,13 @@ public class StatisticDaoImpl implements StatisticDao {
         return getMostStudent((current, general) -> current < general);
     }
 
-    private <T> Map<T, Long> getMost(List<T> list, Function<Long, T> getInstance, Function<Visit, Long> getId,
+    private <T> Map<T, Long> getMost(List<T> list, Function<Visit, T> getInstance,
                                      Function<Map<T, Long>, Long> getMostAttendance) throws SQLException {
         List<Visit> visits = dbWorker.getVisitDao().getVisits();
         Map<T, Long> attendanceMap = new HashMap<>();
         list.forEach(instance -> attendanceMap.put(instance, 0L));
         visits.forEach(visit -> {
-            T instance = getInstance.apply(getId.apply(visit));
+            T instance = getInstance.apply(visit);
             attendanceMap.replace(instance, attendanceMap.get(instance) + 1);
         });
         long attendance = getMostAttendance.apply(attendanceMap);
@@ -82,45 +82,39 @@ public class StatisticDaoImpl implements StatisticDao {
     }
 
     private Map<Course, Long> getMostCourse(BiPredicate<Long, Long> howToChooseBoundary) throws SQLException {
-        Function<Long, Course> getInstance = (courseId) -> {
+        Function<Visit, Course> getInstance = (visit) -> {
             try {
+                Long courseId = dbWorker.getLessonDao().getCourseId(visit.getLessonId());
                 return dbWorker.getCourseDao().getCourse(courseId);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         };
-        Function<Visit, Long> getId = (visit -> {
-            try {
-                return dbWorker.getLessonDao().getCourseId(visit.getLessonId());
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        });
-        return getMost(dbWorker.getCourseDao().getCourses(), getInstance, getId,
+        return getMost(dbWorker.getCourseDao().getCourses(), getInstance,
                 (courseMap -> getMostAttendance(courseMap, howToChooseBoundary)));
     }
 
     private Map<Lesson, Long> getMostLesson(BiPredicate<Long, Long> howToChooseBoundary) throws SQLException {
-        Function<Long, Lesson> getInstance = (lessonId) -> {
+        Function<Visit, Lesson> getInstance = (visit) -> {
             try {
-                return dbWorker.getLessonDao().getLesson(lessonId);
+                return dbWorker.getLessonDao().getLesson(visit.getLessonId());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         };
-        return getMost(dbWorker.getLessonDao().getLessons(), getInstance, Visit::getLessonId,
+        return getMost(dbWorker.getLessonDao().getLessons(), getInstance,
                 (lessonMap -> getMostAttendance(lessonMap, howToChooseBoundary)));
     }
 
     private Map<Student, Long> getMostStudent(BiPredicate<Long, Long> howToChooseBoundary) throws SQLException {
-        Function<Long, Student> getInstance = (studentId) -> {
+        Function<Visit, Student> getInstance = (visit) -> {
             try {
-                return dbWorker.getStudentDao().getStudent(studentId);
+                return dbWorker.getStudentDao().getStudent(visit.getStudentId());
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         };
-        return getMost(dbWorker.getStudentDao().getStudents(), getInstance, Visit::getStudentId,
+        return getMost(dbWorker.getStudentDao().getStudents(), getInstance,
                 (studentMap -> getMostAttendance(studentMap, howToChooseBoundary)));
     }
 }
