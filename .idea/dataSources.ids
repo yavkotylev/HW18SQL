@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="H2 - HW18SQL" uuid="64e41235-64f9-4a0f-91d6-d365cc1f29e3">
+    <database-info product="H2" version="1.4.192 (2016-05-26)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.192 (2016-05-26)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="HW18SQL"/>
+    <table name="COURSES" schema="PUBLIC" catalog="HW18SQL" type="TABLE">
+      <column name="COURSE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfN0VBMDZBRDBfOTBDOF80MzREXzhCRDZfNTY1NjQ3OTVBQzQ0KQ==" autoIncrement="true"/>
+      <column name="COURSE_NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_6" columns="COURSE_ID"/>
+    </table>
+    <table name="LESSONS" schema="PUBLIC" catalog="HW18SQL" type="TABLE">
+      <column name="LESSON_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfMzBFMUE2ODdfMENEMV80QkZGX0JEN0RfM0Y5OTJBN0ZERjY4KQ==" autoIncrement="true"/>
+      <column name="COURSE_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="START_TIME" sqlType="TIME" precision="6" scale="0" nullable="true" jdbcType="92"/>
+      <column name="END_TIME" sqlType="TIME" precision="6" scale="0" nullable="true" jdbcType="92"/>
+      <column name="LESSON_DATE" sqlType="DATE" precision="8" scale="0" nullable="true" jdbcType="91"/>
+      <primary-key name="CONSTRAINT_2" columns="LESSON_ID"/>
+      <foreign-key name="CONSTRAINT_2E" columns="COURSE_ID" ref-table="COURSES" ref-schema="PUBLIC" ref-catalog="HW18SQL" ref-columns="COURSE_ID" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="STUDENTS" schema="PUBLIC" catalog="HW18SQL" type="TABLE">
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfM0YwRjY4NDRfQkY3Q180NkY3Xzg3NEFfNDM0N0E5MTkzOUQ0KQ==" autoIncrement="true"/>
+      <column name="STUDENT_NAME" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="STUDENT_SURNAME" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_9" columns="STUDENT_ID"/>
+    </table>
+    <table name="VISITS" schema="PUBLIC" catalog="HW18SQL" type="TABLE">
+      <column name="VISIT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfOUQzQjNBRTJfQjJBRV80RTI2Xzg3MERfRUNENEFCQzdBOTBDKQ==" autoIncrement="true"/>
+      <column name="LESSON_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="STUDENT_ID" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_96" columns="VISIT_ID"/>
+      <foreign-key name="CONSTRAINT_96E" columns="LESSON_ID" ref-table="LESSONS" ref-schema="PUBLIC" ref-catalog="HW18SQL" ref-columns="LESSON_ID" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="CONSTRAINT_96EC" columns="STUDENT_ID" ref-table="STUDENTS" ref-schema="PUBLIC" ref-catalog="HW18SQL" ref-columns="STUDENT_ID" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+  </data-source>
+</component>

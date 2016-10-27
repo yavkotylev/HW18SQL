@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClientPropertiesManager">
+    <properties class="javax.swing.AbstractButton">
+      <property name="hideActionText" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JComponent">
+      <property name="html.disable" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JEditorPane">
+      <property name="JEditorPane.w3cLengthUnits" class="java.lang.Boolean" />
+      <property name="JEditorPane.honorDisplayProperties" class="java.lang.Boolean" />
+      <property name="charset" class="java.lang.String" />
+    </properties>
+    <properties class="javax.swing.JList">
+      <property name="List.isFileList" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JPasswordField">
+      <property name="JPasswordField.cutCopyAllowed" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JSlider">
+      <property name="Slider.paintThumbArrowShape" class="java.lang.Boolean" />
+      <property name="JSlider.isFilled" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JTable">
+      <property name="Table.isFileList" class="java.lang.Boolean" />
+      <property name="JTable.autoStartsEdit" class="java.lang.Boolean" />
+      <property name="terminateEditOnFocusLost" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JToolBar">
+      <property name="JToolBar.isRollover" class="java.lang.Boolean" />
+    </properties>
+    <properties class="javax.swing.JTree">
+      <property name="JTree.lineStyle" class="java.lang.String" />
+    </properties>
+    <properties class="javax.swing.text.JTextComponent">
+      <property name="caretAspectRatio" class="java.lang.Double" />
+      <property name="caretWidth" class="java.lang.Integer" />
+    </properties>
+  </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/Documents/working/BPMN/Bpmn" value="1436269396000" />
+        <entry key="$USER_HOME$/Documents/working/Bpmn-master" value="1436185420000" />
+        <entry key="$USER_HOME$/Documents/working/Bpmn/Bpmn" value="1436262634000" />
+        <entry key="$USER_HOME$/Documents/working/BpmnSimulation/BpmnSimulation" value="1436733577000" />
+        <entry key="$USER_HOME$/Documents/working/ScalaJsSmsClient-master" value="1438926008000" />
+        <entry key="$USER_HOME$/Documents/working/Scala_js/Scala_js_tutorial/workbench-example-app-master" value="2874594992000" />
+        <entry key="$USER_HOME$/Documents/working/Scala_js/Test" value="1437486220000" />
+        <entry key="$USER_HOME$/Documents/working/SmsClient-master" value="2877453880000" />
+        <entry key="$USER_HOME$/Documents/working/akka_serverWS/akkaServerWS" value="1438848615000" />
+        <entry key="$USER_HOME$/Documents/working/akka_serverWS/akkaServerWS-master" value="1438915896000" />
+        <entry key="$USER_HOME$/Documents/working/websocket-akka-http-master" value="1437721346000" />
+        <entry key="$USER_HOME$/Documents/working/workbench-example-app-master" value="2874594992000" />
+        <entry key="$USER_HOME$/Downloads/BpmnSimulation-master" value="1436317046000" />
+        <entry key="$USER_HOME$/repos/forks/scala-reql" value="1446735477000" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+</project>

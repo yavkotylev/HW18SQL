@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="H2 - HW18SQL" uuid="64e41235-64f9-4a0f-91d6-d365cc1f29e3">
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-pattern>HW18SQL.PUBLIC</schema-pattern>
+      <default-schemas>HW18SQL.PUBLIC</default-schemas>
+    </data-source>
+  </component>
+</project>
